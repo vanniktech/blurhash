@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+  <issue id="SyntheticAccessor" severity="error"/>
+  <issue id="ConvertToWebp" severity="ignore"/>
+  <!-- View Binding bugs. -->
+  <issue id="UnusedIds">
+    <ignore regexp=".*"/>
+  </issue>
+</lint>

@@ -1,0 +1,26 @@
+// Signature format: 4.0
+package com.vanniktech.blurhash {
+
+  public final class BlurHash {
+    method public void clearCache();
+    method public android.graphics.Bitmap? decode(String blurHash, int width, int height, optional float punch, optional boolean useCache);
+    method public String encode(android.graphics.Bitmap bitmap, int componentX, int componentY);
+    field public static final com.vanniktech.blurhash.BlurHash INSTANCE;
+  }
+
+  public final class BlurHash {
+    method public void clearCache();
+    method public error.NonExistentClass! decode(String blurHash, error.NonExistentClass width, error.NonExistentClass height, optional float punch, optional boolean useCache);
+    method public String? encode(error.NonExistentClass uiImage, int componentX, int componentY);
+    field public static final com.vanniktech.blurhash.BlurHash INSTANCE;
+  }
+
+  public final class BlurHash {
+    method public void clearCache();
+    method public error.NonExistentClass! decode(String blurHash, int width, int height, optional float punch, optional boolean useCache);
+    method public String encode(error.NonExistentClass bufferedImage, int componentX, int componentY);
+    field public static final com.vanniktech.blurhash.BlurHash INSTANCE;
+  }
+
+}
+
