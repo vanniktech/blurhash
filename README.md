@@ -40,10 +40,8 @@ dependencies {
 
 From iOS:
 
-```groovy
-dependencies {
-  implementation("com.vanniktech:blurhash:0.1.0")
-}
+```ruby
+pod 'BlurHash', :git => 'https://github.com/vanniktech/blurhash', :branch => "master"
 ```
 
 # API

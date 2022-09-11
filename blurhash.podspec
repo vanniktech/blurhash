@@ -1,0 +1,1 @@
+blurhash/blurhash.podspec
