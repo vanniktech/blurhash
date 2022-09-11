@@ -1,0 +1,16 @@
+PODS:
+  - BlurHash (0.1.0-SNAPSHOT)
+
+DEPENDENCIES:
+  - BlurHash (from `../blurhash`)
+
+EXTERNAL SOURCES:
+  BlurHash:
+    :path: "../blurhash"
+
+SPEC CHECKSUMS:
+  BlurHash: 5fd8b80c889735e4a4c15887fbad3d78d3bb9faa
+
+PODFILE CHECKSUM: 15700ecada551b00eac0e2e014d648eaaaccb171
+
+COCOAPODS: 1.11.3

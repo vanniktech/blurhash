@@ -1,0 +1,30 @@
+[versions]
+minSdk = "21"
+compileSdk = "31"
+targetSdk = "31"
+
+androidgradleplugin = "7.2.2"
+kotlin = "1.7.10"
+ktlint = "0.46.0"
+
+[libraries]
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version = "1.4.2" }
+kotlin-test-annotations-common = { module = "org.jetbrains.kotlin:kotlin-test-annotations-common", version.ref = "kotlin" }
+kotlin-test-common = { module = "org.jetbrains.kotlin:kotlin-test-common", version.ref = "kotlin" }
+kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
+leakcanary-android = { module = "com.squareup.leakcanary:leakcanary-android", version = "2.9.1" }
+material = { module = "com.google.android.material:material", version = "1.6.1" }
+plugin-android-cache-fix = { module = "org.gradle.android.cache-fix:org.gradle.android.cache-fix.gradle.plugin", version = "2.5.6" }
+plugin-androidgradleplugin = { module = "com.android.tools.build:gradle", version.ref = "androidgradleplugin" }
+plugin-dependency-guard = { module = "com.dropbox.dependency-guard:dependency-guard", version = "0.3.1" }
+plugin-dokka = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version = "1.7.10" }
+plugin-kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+plugin-licensee = { module = "app.cash.licensee:licensee-gradle-plugin", version = "1.5.0" }
+plugin-metalava = { module = "me.tylerbwong.gradle:metalava-gradle", version = "0.2.3" }
+plugin-publish = { module = "com.vanniktech:gradle-maven-publish-plugin", version = "0.21.0" }
+plugin-paparazzi = { module = "app.cash.paparazzi:paparazzi-gradle-plugin", version = "1.1.0-SNAPSHOT" }
+timber = { module = "com.jakewharton.timber:timber", version = "5.0.1" }
+
+[plugins]
+codequalitytools = { id = "com.vanniktech.code.quality.tools", version = "0.22.0" }
+dependencygraphgenerator = { id = "com.vanniktech.dependency.graph.generator", version = "0.8.0" }
