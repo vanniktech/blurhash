@@ -3,6 +3,10 @@ blurhash
 
 A Kotlin Multiplatform library to use [blurhash](https://blurha.sh/) in your Android App, iOS / Mac App & JVM Backend.
 
+| `Android`                             | `iOS`                         | `JVM`                         |
+|:--------------------------------------|:------------------------------|:------------------------------|
+| ![Sample Android](sample-android.png) | ![Sample iOS](sample-ios.png) | ![Sample JVM](sample-jvm.png) |
+
 # Why?
 
 If you've tried using [blurhash](https://blurha.sh/), you qickly stumple upon the [main repository](https://github.com/woltapp/blurhash). They provide sources for [Swift](https://github.com/woltapp/blurhash/tree/master/Swift), [Typescript](https://github.com/woltapp/blurhash/tree/master/TypeScript), [Python](https://github.com/woltapp/blurhash-python), [Kotlin](https://github.com/woltapp/blurhash/tree/master/Kotlin) and [C](https://github.com/woltapp/blurhash/tree/master/C). However:
@@ -49,7 +53,7 @@ pod 'BlurHash', :git => 'https://github.com/vanniktech/blurhash', :branch => "ma
 Use `com.vanniktech.blurhash.BlurHash` directly in your platform specific code to `encode` as well as `decode`:
 
 - [sample-android](./sample-android/src/main/kotlin/com/vanniktech/blurhash/sample/android/BlurHashMainActivity.kt): Works with `Bitmap`
-- [sample-ios](./sample-ios/ios/App.swift): Works with `UIImage`
+- [sample-ios](./sample-ios/ios/App.swift): Works with `UIImage` (Use `import blurhash` & `BlurHash.shared`)
 - [sample-jvm](sample-jvm/src/main/java/com/vanniktech/blurhash/sample/jvm/BlurHashJvm.kt): Works with `BufferedImage`
 
 # Thanks

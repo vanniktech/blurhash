@@ -15,11 +15,15 @@ fun main() {
   // Blur hashing.
   val blurHash = BlurHash.encode(
     bufferedImage = image,
-    componentX = 4,
-    componentY = 3,
+    componentX = 5,
+    componentY = 4,
   )
 
-  println("${input.absolutePath} yielded following blurhash:")
+  println("Generating blur hash for:")
+  println(input.absolutePath)
+
+  println()
+  println("Yielded:")
   println(blurHash)
 
   val blurred = BlurHash.decode(
@@ -31,5 +35,7 @@ fun main() {
   // Create blurred version.
   val output = directory.resolve("blueberries-blurred.png")
   ImageIO.write(blurred!!, "png", output)
-  println("Blurred image can be found here: ${output.absolutePath}")
+  println()
+  println("A generated blurred image can be found here:")
+  println(output.absolutePath)
 }

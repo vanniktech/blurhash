@@ -15,14 +15,17 @@
       tools:srcCompat="@drawable/blueberries"
       />
   <TextView
-      android:layout_marginTop="50dp"
+      android:layout_marginTop="24dp"
       android:id="@+id/blurHash"
+      android:gravity="center"
+      android:layout_marginStart="64dp"
+      android:layout_marginEnd="64dp"
       android:textIsSelectable="true"
-      android:layout_width="wrap_content"
+      android:layout_width="match_parent"
       android:layout_height="wrap_content"
       />
   <ImageView
-      android:layout_marginTop="50dp"
+      android:layout_marginTop="24dp"
       android:id="@+id/blurred"
       android:importantForAccessibility="no"
       android:layout_width="wrap_content"
