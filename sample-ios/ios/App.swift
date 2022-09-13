@@ -3,10 +3,18 @@ import blurhash
 
 @main
 struct SampleApp : App {
+    @UIApplicationDelegateAdaptor(SampleDelegate.self) var appDelegate
+
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
+    }
+}
+
+class SampleDelegate: NSObject, UIApplicationDelegate {
+    func applicationDidReceiveMemoryWarning(_ application: UIApplication) {
+        BlurHash.shared.clearCache()
     }
 }
 
