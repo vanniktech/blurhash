@@ -14,9 +14,9 @@ If you've tried using [blurhash](https://blurha.sh/), you qickly stumple upon th
 - Implementations produce [different hashes for the same picture](https://github.com/woltapp/blurhash/issues/196)
 - There are no artifacts to consume i.e. no Cocoa Pod or Maven dependency
 - Not all implementations provide both encoding and decoding support
-- Sample apps for all Android, iOS & JVM with consistent images and blur hashes
+- Missing sample apps with consistent images and blur hashes
 
-The goal of this library is to unify all of the above and provide a common API.
+The goal of this library is to solve all of the above mentioned problems, provide a common API and good samples for each platform.
 
 # Usage
 
