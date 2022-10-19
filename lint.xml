@@ -2,6 +2,7 @@
 <lint>
   <issue id="SyntheticAccessor" severity="error"/>
   <issue id="ConvertToWebp" severity="ignore"/>
+  <issue id="InvalidPackage" severity="ignore"/>
   <!-- View Binding bugs. -->
   <issue id="UnusedIds">
     <ignore regexp=".*"/>
