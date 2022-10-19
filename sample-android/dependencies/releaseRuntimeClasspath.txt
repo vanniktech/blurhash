@@ -13,7 +13,7 @@ androidx.coordinatorlayout:coordinatorlayout:1.1.0
 androidx.core:core:1.5.0
 androidx.cursoradapter:cursoradapter:1.0.0
 androidx.customview:customview:1.1.0
-androidx.databinding:viewbinding:7.3.0
+androidx.databinding:viewbinding:7.3.1
 androidx.documentfile:documentfile:1.0.0
 androidx.drawerlayout:drawerlayout:1.1.1
 androidx.dynamicanimation:dynamicanimation:1.0.0
