@@ -32,9 +32,6 @@ kotlin {
     publishLibraryVariants("release")
   }
   jvm()
-  jvmToolchain {
-    languageVersion.set(JavaLanguageVersion.of("11"))
-  }
   listOf(
     iosX64(),
     iosArm64(),
