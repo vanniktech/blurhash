@@ -8,12 +8,6 @@ dependencyGuard {
   configuration("releaseRuntimeClasspath")
 }
 
-kotlin {
-  jvmToolchain {
-    languageVersion.set(JavaLanguageVersion.of("11"))
-  }
-}
-
 android {
   namespace = "com.vanniktech.blurhash.sample.android"
 
