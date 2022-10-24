@@ -19,8 +19,8 @@ licensee {
 }
 
 metalava {
-  filename = "api/current.txt"
-  sourcePaths = mutableSetOf("src/commonMain", "src/androidMain", "src/iosMain", "src/jvmMain")
+  filename.set("api/current.txt")
+  sourcePaths.setFrom("src/commonMain", "src/androidMain", "src/iosMain", "src/jvmMain")
 }
 
 dependencyGuard {
