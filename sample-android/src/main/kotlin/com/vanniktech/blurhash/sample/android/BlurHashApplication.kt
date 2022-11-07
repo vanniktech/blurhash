@@ -4,7 +4,7 @@ import android.app.Application
 import com.vanniktech.blurhash.BlurHash
 import timber.log.Timber
 
-class BlurHashMainApplication : Application() {
+class BlurHashApplication : Application() {
   override fun onCreate() {
     super.onCreate()
     Timber.plant(Timber.DebugTree())
