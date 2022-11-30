@@ -10,7 +10,6 @@ plugins {
   id("me.tylerbwong.gradle.metalava")
   id("com.vanniktech.maven.publish")
   id("app.cash.licensee")
-  id("com.dropbox.dependency-guard")
   id("app.cash.paparazzi")
 }
 
@@ -21,10 +20,6 @@ licensee {
 metalava {
   filename.set("api/current.txt")
   sourcePaths.setFrom("src/commonMain", "src/androidMain", "src/iosMain", "src/jvmMain")
-}
-
-dependencyGuard {
-  configuration("releaseRuntimeClasspath")
 }
 
 kotlin {

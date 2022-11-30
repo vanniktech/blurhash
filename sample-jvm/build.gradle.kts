@@ -1,6 +1,5 @@
 plugins {
   application
-  id("com.dropbox.dependency-guard")
   id("org.jetbrains.kotlin.jvm")
 }
 
@@ -10,10 +9,6 @@ dependencies {
 
 dependencies {
   testImplementation(libs.kotlin.test.junit)
-}
-
-dependencyGuard {
-  configuration("runtimeClasspath")
 }
 
 application {
