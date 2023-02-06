@@ -4,6 +4,7 @@ plugins {
 }
 
 dependencies {
+  implementation("org.jcodec:jcodec-javase:0.2.5")
   implementation(project(":blurhash"))
 }
 
