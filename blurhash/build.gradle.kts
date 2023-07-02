@@ -27,6 +27,9 @@ kotlin {
     publishLibraryVariants("release")
   }
   jvm()
+  jvmToolchain {
+    languageVersion.set(JavaLanguageVersion.of(11))
+  }
   listOf(
     iosX64(),
     iosArm64(),
@@ -62,7 +65,7 @@ kotlin {
       }
     }
 
-    val androidTest by getting {
+    val androidUnitTest by getting {
       dependencies {
         implementation(libs.kotlin.test.junit)
       }
@@ -117,6 +120,11 @@ android {
 
   defaultConfig {
     minSdk = libs.versions.minSdk.get().toInt()
+  }
+
+  compileOptions {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
   }
 
   resourcePrefix = "blurhash_"
