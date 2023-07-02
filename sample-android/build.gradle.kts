@@ -3,6 +3,12 @@ plugins {
   id("org.jetbrains.kotlin.android")
 }
 
+kotlin {
+  jvmToolchain {
+    languageVersion.set(JavaLanguageVersion.of(11))
+  }
+}
+
 android {
   namespace = "com.vanniktech.blurhash.sample.android"
 
@@ -31,6 +37,11 @@ android {
       isShrinkResources = false
       proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"))
     }
+  }
+
+  compileOptions {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
   }
 }
 
