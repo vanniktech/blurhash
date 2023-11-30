@@ -8,6 +8,7 @@ import java.awt.image.DataBufferInt
 import java.awt.image.Raster
 import java.awt.image.SinglePixelPackedSampleModel
 
+@Suppress("EXPECT_ACTUAL_CLASSIFIERS_ARE_IN_BETA_WARNING")
 actual object BlurHash {
   /**
    * Clear in-memory calculations.

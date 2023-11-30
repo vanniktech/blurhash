@@ -2,6 +2,7 @@ package com.vanniktech.blurhash
 
 import android.graphics.Bitmap
 
+@Suppress("EXPECT_ACTUAL_CLASSIFIERS_ARE_IN_BETA_WARNING")
 actual object BlurHash {
   /**
    * Clear in-memory calculations.

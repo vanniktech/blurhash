@@ -1,11 +1,11 @@
 [versions]
 minSdk = "21"
-compileSdk = "32"
-targetSdk = "32"
+compileSdk = "34"
+targetSdk = "34"
 
 androidgradleplugin = "8.2.0"
-kotlin = "1.8.22"
-ktlint = "0.47.1"
+kotlin = "1.9.21"
+ktlint = "1.0.1"
 
 [libraries]
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version = "1.6.1" }
@@ -25,5 +25,5 @@ plugin-paparazzi = { module = "app.cash.paparazzi:paparazzi-gradle-plugin", vers
 timber = { module = "com.jakewharton.timber:timber", version = "5.0.1" }
 
 [plugins]
-codequalitytools = { id = "com.vanniktech.code.quality.tools", version = "0.23.0" }
+codequalitytools = { id = "com.vanniktech.code.quality.tools", version = "0.24.0" }
 dependencygraphgenerator = { id = "com.vanniktech.dependency.graph.generator", version = "0.8.0" }

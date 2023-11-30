@@ -1,5 +1,6 @@
 package com.vanniktech.blurhash
 
+@Suppress("EXPECT_ACTUAL_CLASSIFIERS_ARE_IN_BETA_WARNING")
 expect object BlurHash {
   /**
    * Clears calculations stored in memory cache.

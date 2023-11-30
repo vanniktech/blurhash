@@ -1,5 +1,4 @@
 import org.jetbrains.kotlin.gradle.plugin.mpp.BitcodeEmbeddingMode
-import org.jetbrains.kotlin.gradle.plugin.mpp.Framework
 
 plugins {
   id("org.jetbrains.dokka")
@@ -23,45 +22,26 @@ metalava {
 }
 
 kotlin {
-  android {
+  applyDefaultHierarchyTemplate()
+
+  androidTarget {
     publishLibraryVariants("release")
   }
   jvm()
-  jvmToolchain {
-    languageVersion.set(JavaLanguageVersion.of(11))
-  }
-  listOf(
-    iosX64(),
-    iosArm64(),
-    iosSimulatorArm64(),
-  ).forEach {
-    it.binaries.all {
-      if (this is Framework) {
-        isStatic = true
-        embedBitcode(if ("YES" == System.getenv("ENABLE_BITCODE")) BitcodeEmbeddingMode.BITCODE else BitcodeEmbeddingMode.MARKER)
-      }
-    }
-  }
+  jvmToolchain(11)
+  iosX64()
+  iosArm64()
+  iosSimulatorArm64()
 
   targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget> {
     compilations["main"].kotlinOptions.freeCompilerArgs += "-Xexport-kdoc"
   }
 
   sourceSets {
-    val commonMain by getting {
-      dependencies {
-      }
-    }
-
     val commonTest by getting {
       dependencies {
         implementation(libs.kotlin.test.common)
         implementation(libs.kotlin.test.annotations.common)
-      }
-    }
-
-    val androidMain by getting {
-      dependencies {
       }
     }
 
@@ -71,35 +51,10 @@ kotlin {
       }
     }
 
-    val jvmMain by getting {
-      dependencies {
-      }
-    }
-
     val jvmTest by getting {
       dependencies {
         implementation(libs.kotlin.test.junit)
       }
-    }
-
-    val iosX64Main by getting
-    val iosArm64Main by getting
-    val iosSimulatorArm64Main by getting
-    val iosMain by creating {
-      dependsOn(commonMain)
-      iosX64Main.dependsOn(this)
-      iosArm64Main.dependsOn(this)
-      iosSimulatorArm64Main.dependsOn(this)
-    }
-
-    val iosX64Test by getting
-    val iosArm64Test by getting
-    val iosSimulatorArm64Test by getting
-    val iosTest by creating {
-      dependsOn(commonTest)
-      iosX64Test.dependsOn(this)
-      iosArm64Test.dependsOn(this)
-      iosSimulatorArm64Test.dependsOn(this)
     }
   }
 
@@ -110,6 +65,11 @@ kotlin {
     name = "BlurHash"
     authors = "Niklas Baudy"
     version = project.property("VERSION_NAME").toString()
+
+    framework {
+      isStatic = true
+      embedBitcode(if ("YES" == System.getenv("ENABLE_BITCODE")) BitcodeEmbeddingMode.BITCODE else BitcodeEmbeddingMode.DISABLE)
+    }
   }
 }
 
