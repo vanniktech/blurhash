@@ -33,6 +33,8 @@ import platform.UIKit.UIGraphicsPushContext
 import platform.UIKit.UIImage
 import kotlin.math.roundToLong
 
+@Suppress("EXPECT_ACTUAL_CLASSIFIERS_ARE_IN_BETA_WARNING")
+@OptIn(kotlinx.cinterop.ExperimentalForeignApi::class)
 actual object BlurHash {
   /**
    * Clear in-memory calculations.
@@ -63,7 +65,7 @@ actual object BlurHash {
       data = null,
       width = pixelWidth,
       height = pixelHeight,
-      bitsPerComponent = 8,
+      bitsPerComponent = 8u,
       bytesPerRow = pixelWidth * 4uL,
       space = CGColorSpaceCreateWithName(name = kCGColorSpaceSRGB),
       bitmapInfo = CGImageAlphaInfo.kCGImageAlphaPremultipliedLast.value,
@@ -159,8 +161,8 @@ actual object BlurHash {
     val cgImage = CGImageCreate(
       width = imageWidth.toULong(),
       height = imageHeight.toULong(),
-      bitsPerComponent = 8,
-      bitsPerPixel = 24,
+      bitsPerComponent = 8u,
+      bitsPerPixel = 24u,
       bytesPerRow = bytesPerRow.toULong(),
       space = CGColorSpaceCreateDeviceRGB(),
       bitmapInfo = CGImageAlphaInfo.kCGImageAlphaNone.value,
