@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
     spec.name                     = 'BlurHash'
-    spec.version                  = '0.2.0-SNAPSHOT'
+    spec.version                  = '0.2.0'
     spec.homepage                 = 'https://github.com/vanniktech/blurhash'
     spec.source                   = { :http=> ''}
     spec.authors                  = 'Niklas Baudy'
