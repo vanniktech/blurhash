@@ -15,8 +15,8 @@ internal object CommonBlurHash {
   // Cache Math.cos() calculations to improve performance.
   // The number of calculations can be huge for many bitmaps: width * height * numCompX * numCompY * 2 * nBitmaps
   // The cache is enabled by default, it is recommended to disable it only when just a few images are displayed
-  private val cacheCosinesX = HashMap<Int, DoubleArray>()
-  private val cacheCosinesY = HashMap<Int, DoubleArray>()
+  private val cacheCosinesX = HashMap<Int, FloatArray>()
+  private val cacheCosinesY = HashMap<Int, FloatArray>()
 
   internal fun clearCache() {
     cacheCosinesX.clear()
@@ -81,7 +81,7 @@ internal object CommonBlurHash {
           for (i in 0 until componentX) {
             val cosX = cosinesX.getCos(calculateCosX, i, componentX, x, width)
             val cosY = cosinesY.getCos(calculateCosY, j, componentY, y, height)
-            val basis = (cosX * cosY).toFloat()
+            val basis = (cosX * cosY)
             val color = colors[j * componentX + i]
             r += color[0] * basis
             g += color[1] * basis
@@ -104,25 +104,25 @@ internal object CommonBlurHash {
   }
 
   private fun getArrayForCosinesY(calculate: Boolean, height: Int, numCompY: Int) = when {
-    calculate -> DoubleArray(height * numCompY).also { cacheCosinesY[height * numCompY] = it }
+    calculate -> FloatArray(height * numCompY).also { cacheCosinesY[height * numCompY] = it }
     else -> cacheCosinesY[height * numCompY]!!
   }
 
   private fun getArrayForCosinesX(calculate: Boolean, width: Int, numCompX: Int) = when {
-    calculate -> DoubleArray(width * numCompX).also { cacheCosinesX[width * numCompX] = it }
+    calculate -> FloatArray(width * numCompX).also { cacheCosinesX[width * numCompX] = it }
     else -> cacheCosinesX[width * numCompX]!!
   }
 
-  private fun DoubleArray.getCos(
+  private fun FloatArray.getCos(
     calculate: Boolean,
     x: Int,
     numComp: Int,
     y: Int,
     size: Int,
-  ): Double {
+  ): Float {
     val index = x + numComp * y
     if (calculate) {
-      this[index] = cos(PI * y * x / size)
+      this[index] = cos(PI * y * x / size).toFloat()
     }
 
     return this[index]
