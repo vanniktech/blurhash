@@ -7,9 +7,17 @@ actual object BlurHash {
   /**
    * Clear in-memory calculations.
    * The cache is not big, but will increase when many image sizes are decoded, using [decode].
-   * If the app needs memory it is recommended to clear it.
+   * If the app needs memory, it is recommended to clear it.
    */
   actual fun clearCache() = CommonBlurHash.clearCache()
+
+  /**
+   * Returns the average sRGB color for the given [blurHash] in respect to its [punch].
+   */
+  actual fun averageColor(
+    blurHash: String,
+    punch: Float,
+  ) = CommonBlurHash.averageColor(blurHash, punch)
 
   /**
    * Calculates the blur hash from the given [bitmap].
@@ -46,7 +54,7 @@ actual object BlurHash {
     blurHash: String,
     width: Int,
     height: Int,
-    punch: Float = 1f,
+    punch: Float = DEFAULT_PUNCH,
     useCache: Boolean = true,
   ): Bitmap? {
     val pixels = CommonBlurHash.decode(

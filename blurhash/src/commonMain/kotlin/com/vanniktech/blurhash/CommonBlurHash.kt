@@ -11,6 +11,12 @@ import kotlin.math.cos
 import kotlin.math.floor
 import kotlin.math.roundToInt
 
+internal class BlurHashInfo internal constructor(
+  val colors: Array<FloatArray>,
+  val componentX: Int,
+  val componentY: Int,
+)
+
 internal object CommonBlurHash {
   // Cache Math.cos() calculations to improve performance.
   // The number of calculations can be huge for many bitmaps: width * height * numCompX * numCompY * 2 * nBitmaps
@@ -23,6 +29,22 @@ internal object CommonBlurHash {
     cacheCosinesY.clear()
   }
 
+  internal fun averageColor(
+    blurHash: String,
+    punch: Float,
+  ): Int? {
+    val blurHashInfo = info(
+      blurHash = blurHash,
+      punch = punch,
+    ) ?: return null
+
+    val dc = blurHashInfo.colors.firstOrNull() ?: return null
+    val red = Utils.linearToSrgb(dc[0])
+    val green = Utils.linearToSrgb(dc[1])
+    val blue = Utils.linearToSrgb(dc[2])
+    return 255 shl 24 or (red shl 16) or (green shl 8) or blue
+  }
+
   internal fun <T : Any> decode(
     blurHash: String,
     pixelWriter: PixelWriter<T>,
@@ -31,6 +53,26 @@ internal object CommonBlurHash {
     punch: Float,
     useCache: Boolean,
   ): T? {
+    val blurHashInfo = info(
+      blurHash = blurHash,
+      punch = punch,
+    ) ?: return null
+
+    return composePixels(
+      pixelWriter = pixelWriter,
+      width = width,
+      height = height,
+      componentX = blurHashInfo.componentX,
+      componentY = blurHashInfo.componentY,
+      colors = blurHashInfo.colors,
+      useCache = useCache,
+    )
+  }
+
+  private fun info(
+    blurHash: String,
+    punch: Float,
+  ): BlurHashInfo? {
     if (blurHash.length < 6) {
       return null
     }
@@ -56,7 +98,11 @@ internal object CommonBlurHash {
       }
     }
 
-    return composePixels(pixelWriter, width, height, componentX, componentY, colors, useCache)
+    return BlurHashInfo(
+      colors = colors,
+      componentX = componentX,
+      componentY = componentY,
+    )
   }
 
   private fun <T : Any> composePixels(
