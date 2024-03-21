@@ -1,5 +1,5 @@
 PODS:
-  - BlurHash (0.3.0)
+  - BlurHash (0.4.0-SNAPSHOT)
 
 DEPENDENCIES:
   - BlurHash (from `../blurhash`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../blurhash"
 
 SPEC CHECKSUMS:
-  BlurHash: 1aa62b06e9c147622e168cb16ed4df8e49cadbfe
+  BlurHash: cdfab3e37b970b4aee966789f324002d9dcc8ef4
 
 PODFILE CHECKSUM: 15700ecada551b00eac0e2e014d648eaaaccb171
 

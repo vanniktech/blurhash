@@ -27,7 +27,7 @@ kotlin {
   sourceSets {
     val commonMain by getting {
       dependencies {
-        implementation("com.vanniktech:blurhash:0.3.0")
+        implementation("com.vanniktech:blurhash:0.4.0-SNAPSHOT")
       }
     }
   }
@@ -38,14 +38,14 @@ From Android / JVM Multiplatform:
 
 ```groovy
 dependencies {
-  implementation("com.vanniktech:blurhash:0.3.0")
+  implementation("com.vanniktech:blurhash:0.4.0-SNAPSHOT")
 }
 ```
 
 From iOS:
 
 ```ruby
-pod 'BlurHash', :git => 'https://github.com/vanniktech/blurhash', :tag => "0.3.0"
+pod 'BlurHash', :git => 'https://github.com/vanniktech/blurhash', :tag => "0.4.0-SNAPSHOT"
 ```
 
 # API
