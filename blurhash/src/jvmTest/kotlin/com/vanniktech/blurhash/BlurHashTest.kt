@@ -93,6 +93,36 @@ class BlurHashTest {
     )
   }
 
+  @Test fun flag() {
+    assert(
+      expectedBlurHash = "LuK+yz_M.7xu2xwbs9n\$IBIVWCt7",
+      expectedAverageColor = "rgb(181, 130, 159)",
+      name = "flag.png",
+      componentX = 4,
+      componentY = 3,
+    )
+  }
+
+  @Test fun road() {
+    assert(
+      expectedBlurHash = "UKMF]oj[01R*~oaz0NWC0NWVIpoe=@WV-ns.",
+      expectedAverageColor = "rgb(193, 158, 111)",
+      name = "road.png",
+      componentX = 4,
+      componentY = 4,
+    )
+  }
+
+  @Test fun badge() {
+    assert(
+      expectedBlurHash = "U48VCUjv0va{NSfQ-Gju5yfP$+fPszfQEsa{",
+      expectedAverageColor = "rgb(73, 18, 145)",
+      name = "badge.png",
+      componentX = 4,
+      componentY = 4,
+    )
+  }
+
   private fun assert(
     name: String,
     expectedBlurHash: String,
@@ -104,13 +134,9 @@ class BlurHashTest {
   ) {
     val file = File("images/$name")
     val bufferedImage = ImageIO.read(file)
-    assertEquals(
-      expected = expectedBlurHash,
-      actual = BlurHash.encode(bufferedImage, componentX, componentY),
-    )
-
+    val actualBlurHash = BlurHash.encode(bufferedImage, componentX, componentY)
     val image = BlurHash.decode(
-      blurHash = expectedBlurHash,
+      blurHash = actualBlurHash,
       width = bufferedImage.width,
       height = bufferedImage.height,
     )
@@ -120,6 +146,11 @@ class BlurHashTest {
     assertEquals(
       expected = true,
       actual = ImageIO.write(image!!, "png", resolve),
+    )
+
+    assertEquals(
+      expected = expectedBlurHash,
+      actual = actualBlurHash,
     )
 
     val averageColor = BlurHash.averageColor(expectedBlurHash)!!
