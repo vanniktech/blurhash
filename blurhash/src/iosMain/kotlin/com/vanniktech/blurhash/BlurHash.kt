@@ -101,14 +101,9 @@ actual object BlurHash {
 
     return CommonBlurHash.encode(
       pixelReader = object : PixelReader {
-        override fun readRed(x: Int, y: Int) =
-          pixels[cgBytesPerPixel * x + 0 + y * cgBytesPerRow].toInt()
-
-        override fun readGreen(x: Int, y: Int) =
-          pixels[cgBytesPerPixel * x + 1 + y * cgBytesPerRow].toInt()
-
-        override fun readBlue(x: Int, y: Int) =
-          pixels[cgBytesPerPixel * x + 2 + y * cgBytesPerRow].toInt()
+        override fun readRed(x: Int, y: Int) = pixels[cgBytesPerPixel * x + 0 + y * cgBytesPerRow].toInt()
+        override fun readGreen(x: Int, y: Int) = pixels[cgBytesPerPixel * x + 1 + y * cgBytesPerRow].toInt()
+        override fun readBlue(x: Int, y: Int) = pixels[cgBytesPerPixel * x + 2 + y * cgBytesPerRow].toInt()
       },
       width = cgWidth,
       height = cgHeight,
