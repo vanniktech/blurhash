@@ -1,6 +1,6 @@
 package com.vanniktech.blurhash
 
-internal class PixelWriterArgb8888(
+class PixelWriterArgb8888(
   width: Int,
   height: Int,
 ) : PixelWriter<IntArray> {

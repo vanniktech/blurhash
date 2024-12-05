@@ -7,5 +7,7 @@ pluginManagement {
 }
 
 include(":blurhash")
+include(":blurhash-compose")
 include(":sample-android")
+include(":sample-compose")
 include(":sample-jvm")

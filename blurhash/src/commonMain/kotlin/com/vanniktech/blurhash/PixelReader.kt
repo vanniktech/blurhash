@@ -1,6 +1,6 @@
 package com.vanniktech.blurhash
 
-internal interface PixelReader {
+interface PixelReader {
   /** Returns the red components of the pixel at the [x]-[y] coordinate. */
   fun readRed(x: Int, y: Int): Int
 

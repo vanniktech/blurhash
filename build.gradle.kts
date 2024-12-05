@@ -1,9 +1,6 @@
 buildscript {
   dependencies {
-    classpath(libs.plugin.android.cache.fix)
-    classpath(libs.plugin.androidgradleplugin)
     classpath(libs.plugin.dokka)
-    classpath(libs.plugin.kotlin)
     classpath(libs.plugin.licensee)
     classpath(libs.plugin.metalava)
     classpath(libs.plugin.paparazzi)
@@ -14,6 +11,13 @@ buildscript {
 plugins {
   alias(libs.plugins.codequalitytools)
   alias(libs.plugins.dependencygraphgenerator)
+  alias(libs.plugins.androidApplication) apply false
+  alias(libs.plugins.androidLibrary) apply false
+  alias(libs.plugins.cachefix) apply false
+  alias(libs.plugins.compose.compiler) apply false
+  alias(libs.plugins.jetbrainsCompose) apply false
+  alias(libs.plugins.kotlinJvm) apply false
+  alias(libs.plugins.kotlinMultiplatform) apply false
 }
 
 codeQualityTools {

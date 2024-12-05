@@ -1,6 +1,6 @@
 package com.vanniktech.blurhash
 
-internal class PixelReaderArgb8888(
+class PixelReaderArgb8888(
   private val pixels: IntArray,
   private val width: Int,
 ) : PixelReader {
