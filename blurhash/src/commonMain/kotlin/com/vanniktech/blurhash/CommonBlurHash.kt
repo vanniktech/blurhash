@@ -17,7 +17,8 @@ internal class BlurHashInfo internal constructor(
   val componentY: Int,
 )
 
-internal object CommonBlurHash {
+// TODO(nik) how to change the API?
+object CommonBlurHash {
   // Cache Math.cos() calculations to improve performance.
   // The number of calculations can be huge for many bitmaps: width * height * numCompX * numCompY * 2 * nBitmaps
   // The cache is enabled by default, it is recommended to disable it only when just a few images are displayed
@@ -45,7 +46,7 @@ internal object CommonBlurHash {
     return 255 shl 24 or (red shl 16) or (green shl 8) or blue
   }
 
-  internal fun <T : Any> decode(
+  fun <T : Any> decode(
     blurHash: String,
     pixelWriter: PixelWriter<T>,
     width: Int,
@@ -174,7 +175,7 @@ internal object CommonBlurHash {
     return this[index]
   }
 
-  internal fun encode(
+  fun encode(
     pixelReader: PixelReader,
     width: Int,
     height: Int,

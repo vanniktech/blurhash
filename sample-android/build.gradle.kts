@@ -11,7 +11,6 @@ kotlin {
 
 android {
   namespace = "com.vanniktech.blurhash.sample.android"
-
   compileSdk = libs.versions.compileSdk.get().toInt()
 
   defaultConfig {
@@ -21,8 +20,6 @@ android {
     targetSdk = libs.versions.targetSdk.get().toInt()
     versionCode = 1
     versionName = project.property("VERSION_NAME").toString()
-
-    vectorDrawables.useSupportLibrary = true
 
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
   }
@@ -43,12 +40,12 @@ android {
     sourceCompatibility = JavaVersion.VERSION_11
     targetCompatibility = JavaVersion.VERSION_11
   }
-}
 
-dependencies {
-  implementation(project(":blurhash"))
-  implementation(libs.timber)
-  implementation(libs.material)
+  dependencies {
+    implementation(project(":blurhash"))
+    implementation(libs.timber)
+    implementation(libs.material)
+  }
 }
 
 dependencies {

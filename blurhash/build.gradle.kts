@@ -3,7 +3,6 @@ plugins {
   id("org.jetbrains.kotlin.multiplatform")
   id("org.jetbrains.kotlin.native.cocoapods")
   id("com.android.library")
-  id("org.jetbrains.kotlin.plugin.parcelize")
   id("me.tylerbwong.gradle.metalava")
   id("com.vanniktech.maven.publish")
   id("app.cash.licensee")
@@ -26,12 +25,20 @@ kotlin {
   }
   jvm()
   jvmToolchain(11)
-  iosX64()
-  iosArm64()
-  iosSimulatorArm64()
-
-  targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget> {
-    compilations["main"].kotlinOptions.freeCompilerArgs += "-Xexport-kdoc"
+  iosX64 {
+    compilerOptions {
+      freeCompilerArgs.add("-Xexport-kdoc")
+    }
+  }
+  iosArm64 {
+    compilerOptions {
+      freeCompilerArgs.add("-Xexport-kdoc")
+    }
+  }
+  iosSimulatorArm64 {
+    compilerOptions {
+      freeCompilerArgs.add("-Xexport-kdoc")
+    }
   }
 
   sourceSets {

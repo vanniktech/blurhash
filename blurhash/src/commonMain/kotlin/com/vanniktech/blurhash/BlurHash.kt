@@ -1,6 +1,6 @@
 package com.vanniktech.blurhash
 
-internal const val DEFAULT_PUNCH = 1f
+const val DEFAULT_PUNCH = 1f
 
 @Suppress("EXPECT_ACTUAL_CLASSIFIERS_ARE_IN_BETA_WARNING")
 expect object BlurHash {
